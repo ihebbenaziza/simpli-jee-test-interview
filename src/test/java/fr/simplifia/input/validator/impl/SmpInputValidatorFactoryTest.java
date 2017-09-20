@@ -4,12 +4,18 @@ import static org.testng.Assert.assertTrue;
 
 import java.util.Locale;
 
+import org.junit.Before;
+import org.mockito.MockitoAnnotations;
 import org.testng.annotations.Test;
 
 /**
  * Created by simplifia on 18/09/17.
  */
 public class SmpInputValidatorFactoryTest {
+    @Before
+    public void setUp(){
+        MockitoAnnotations.initMocks(this);
+    }
     @Test
     public void testFromLocaleFrench() throws Exception {
         assertTrue(SmpInputValidatorFactory.fromLocale(Locale.FRENCH) instanceof SmpDefaultInputValidator);
